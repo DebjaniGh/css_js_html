@@ -1,0 +1,27 @@
+.searchbar {
+  position: relative;
+}
+
+.search-input {
+  width: 300px;
+  padding: 12px 36px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
+  color: #222;
+}
+
+.search-input:focus-visible {
+  outline: 1.2px solid #3b6863;
+}
+
+.search-input::placeholder {
+  color: #888;
+}
+
+.search-icon {
+  position: absolute;
+  left: 8px;
+  top: 50%;
+  transform: translateY(-50%);
+}
