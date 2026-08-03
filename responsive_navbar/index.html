@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./index.js" defer></script>
+  </head>
+  <body>
+    <!-- Logo   Home Docs Pricing        Login Signup -->
+    <header class="navbar">
+      <div class="logo">MyBrand</div>
+
+      <!-- Desktop Navigation starts -->
+      <div class="desktop-nav">
+        <nav class="desktop-links">
+          <a href="#">Home</a>
+          <a href="#">Docs</a>
+          <a href="#">Pricing</a>
+        </nav>
+
+        <div class="desktop-actions">
+          <button class="login-btn">Login</button>
+          <button class="signup-btn">Sign Up</button>
+        </div>
+      </div>
+      <!-- Desktop Navigation ends -->
+
+      <!-- when you click on this on a mobile layout, 
+        it will display the nav links and actions buttons -->
+      <button class="hamburger">☰</button>
+
+      <!-- Mobile Navigation starts-->
+      <nav class="mobile-nav">
+        <a href="#">Home</a>
+        <a href="#">Docs</a>
+        <a href="#">Pricing</a>
+        <hr />
+        <a href="#">Login</a>
+        <a href="#">Sign Up</a>
+      </nav>
+      <!-- Mobile Navigation ends -->
+    </header>
+  </body>
+</html>
