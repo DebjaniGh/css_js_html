@@ -102,8 +102,6 @@
   .mobile-nav.show {
     display: flex;
     flex-direction: column;
-    display: flex;
-    flex-direction: column;
     gap: 12px;
     padding: 12px 24px;
     position: absolute;
