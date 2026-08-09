@@ -1,5 +1,5 @@
 body.modal-open {
-  /* since we use positon:fixed below,
+  /* since we use position:fixed below,
   overflow:hidden will ensure now scroll-through 
   in background page */
   overflow: hidden;

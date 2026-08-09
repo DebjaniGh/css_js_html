@@ -1,0 +1,51 @@
+* {
+  box-sizing: border-box;
+}
+
+.dropdown {
+  position: relative;
+  margin: 120px 0 0 50px;
+}
+
+.dropdown-btn {
+  width: 250px;
+  background-color: rgb(181, 181, 181);
+  color: rgb(13, 11, 11);
+  font-size: 1rem;
+  font-weight: 600;
+  border: 0.5px solid rgb(89, 88, 88);
+  padding: 10px 12px;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  display: none; /* initial closed state */
+}
+
+.dropdown-menu.open {
+  display: block;
+  width: 250px;
+  background-color: rgb(213, 207, 207);
+  border: 0.5px solid rgb(89, 88, 88);
+  padding: 10px 12px;
+  position: absolute; /* menu should open directly below 
+  dropdown btn */
+  top: 100%;
+  left: 0;
+}
+
+.dropdown-option {
+  width: 100%; /* take entire width of dropdown btn */
+  cursor: pointer;
+  border: none;
+  padding: 8px 10px;
+  transition: background-color 0.3s ease;
+}
+
+.dropdown-option:hover {
+  background-color: rgb(233, 227, 227);
+}
+
+.dropdown-option + .dropdown-option {
+  border-top: 0.2px solid rgb(89, 88, 88);
+}
