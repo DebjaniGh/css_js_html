@@ -14,7 +14,7 @@ accordion.addEventListener("click", (event) => {
   const item = header.closest(".accordion-item");
 
   // 3. Find its content
-  /* we firdt find the accordion-otem and then the content, and not use nextElementSibling
+  /* we first find the accordion-item and then the content, and not use nextElementSibling
   to access the content because in future, the accordion-item might be :
   <accordion-item>
     <div className="accordion-header"></div>
