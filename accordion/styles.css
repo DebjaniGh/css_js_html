@@ -1,0 +1,56 @@
+.accordion {
+  width: 600px;
+  max-width: 90%;
+  margin: auto;
+  border: 1px solid rgb(209, 207, 207);
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.accordion-header {
+  width: 100%;
+  padding: 8px 12px;
+  border: 0.2px solid #fdb453;
+  background-color: antiquewhite;
+  text-align: start;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.accordion-header:hover {
+  background-color: rgb(249, 228, 201);
+}
+
+.accordion-header:focus-visible {
+  outline: 1.5px solid #2396fb;
+  outline-offset: 1.5px;
+}
+
+.accordion-header::after {
+  content: "▶";
+  padding: 0px 26px;
+}
+
+.accordion-header.open::after {
+  content: "▼";
+  padding: 0px 26px;
+}
+
+.accordion-item + .accordion-item {
+  /* Select an .accordion-item only 
+  when it immediately follows another .accordion-item. */
+  border-top: 0.2px solid rgb(253, 180, 85);
+}
+
+.accordion-content {
+  height: 0; /* visible height => collapsed content */
+  overflow: hidden; /* content exists but 
+  anything outside the 0px container is clipped. */
+  padding: 0px 10px;
+  transition: height 0.3s ease;
+}
+
+.accordion-inner-content {
+  padding: 10px 0px;
+}
