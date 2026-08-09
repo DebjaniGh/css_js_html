@@ -1,4 +1,7 @@
 body.modal-open {
+  /* since we use positon:fixed below,
+  overflow:hidden will ensure now scroll-through 
+  in background page */
   overflow: hidden;
 }
 
@@ -12,6 +15,12 @@ body.modal-open {
   display: none;
 }
 
+/* two separate classes modal-overlay and modal reqd
+becsue if there is one class, you can't dim the background 
+without dimming the modal;
+a single element can't br both the centering container and
+the centered item;
+with 2 elements, click-outsie-to-close-modal is clean */
 .modal-overlay.show {
   /* use flexbox layout to center children 
   both horizontally and vertically  
