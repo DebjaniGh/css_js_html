@@ -17,6 +17,9 @@
   display: none;
 }
 
+/*positon: fixed makes the toast stay in the same place 
+relative to the viewport even when the user scrolls the page.
+*/
 .toast.show {
   display: block;
   position: fixed;
