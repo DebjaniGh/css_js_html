@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tabs</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="tabs">
+      <div class="tablist" role="tablist">
+        <button
+          class="tab active"
+          data-tab="t1"
+          role="tab"
+          aria-selected="true"
+        >
+          Tab 1
+        </button>
+        <button class="tab" data-tab="t2" role="tab" aria-selected="false">
+          Tab 2
+        </button>
+        <button class="tab" data-tab="t3" role="tab" aria-selected="false">
+          Tab 3
+        </button>
+        <button class="tab" data-tab="t4" role="tab" aria-selected="false">
+          Tab 4
+        </button>
+      </div>
+      <div class="tab-content active" data-tab-content="t1" role="tabpanel">
+        Content for Tab 1 ....
+      </div>
+      <div class="tab-content" data-tab-content="t2" role="tabpanel">
+        This is the content for Tab 2 ....
+      </div>
+      <div class="tab-content" data-tab-content="t3" role="tabpanel">
+        Content for Tab 3 this is....
+      </div>
+      <div class="tab-content" data-tab-content="t4" role="tabpanel">
+        .... Content for Tab 4 ....
+      </div>
+    </div>
+  </body>
+</html>
