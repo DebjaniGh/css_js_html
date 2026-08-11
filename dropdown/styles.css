@@ -30,8 +30,10 @@
   padding: 10px 12px;
   position: absolute; /* menu should open directly below 
   dropdown btn */
-  top: 100%;
-  left: 0;
+  top: 100%; /* percentage top resolves against the height of the containing block, 
+  not the element's own height. 100% of .dropdown's height = the button's full height, 
+  so the menu's top edge lands exactly at the button's bottom edge. No gap, no overlap. */
+  left: 0; /* left edge of menu flush with left edge of dropdown btn */
 }
 
 .dropdown-option {

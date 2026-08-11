@@ -1,6 +1,6 @@
 body.modal-open {
   /* since we use position:fixed below,
-  overflow:hidden will ensure now scroll-through 
+  overflow:hidden will ensure no scroll-through 
   in background page */
   overflow: hidden;
 }
@@ -20,7 +20,7 @@ becsue if there is one class, you can't dim the background
 without dimming the modal;
 a single element can't br both the centering container and
 the centered item;
-with 2 elements, click-outsie-to-close-modal is clean */
+with 2 elements, click-outside-to-close-modal is clean */
 .modal-overlay.show {
   /* use flexbox layout to center children 
   both horizontally and vertically  
@@ -31,7 +31,8 @@ with 2 elements, click-outsie-to-close-modal is clean */
   display: flex;
   justify-content: center;
   align-items: center;
-  position: fixed;
+  position: fixed; /* containing block is the viewport rather than any ancestor */
+  /* pin to viewport's top-left corner */
   top: 0;
   left: 0;
   width: 100%;
