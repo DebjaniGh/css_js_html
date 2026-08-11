@@ -1,3 +1,13 @@
+/*
+click tab
+   ↓
+find DOM element
+   ↓
+add/remove .active
+   ↓
+find corresponding content
+   ↓
+show/hide DOM */
 const tabList = document.querySelector(".tablist");
 const tabsDiv = document.querySelector(".tabs");
 const allTabs = tabList.querySelectorAll(".tab");
