@@ -1,0 +1,50 @@
+* {
+  box-sizing: border-box;
+}
+
+.container {
+  max-width: 300px;
+  width: 90%;
+  margin: 24px auto;
+  position: relative;
+}
+
+.search-input {
+  width: 100%;
+  padding: 8px 12px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.search-input:focus-visible {
+  outline: 1px solid #ccc;
+  outline-offset: 1px;
+}
+
+.suggestions {
+  list-style: none;
+  border: 0.8px solid #ccc;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  position: absolute;
+  top: 100%;
+  left: 0;
+}
+
+.suggestion {
+  padding: 6px 10px;
+  cursor: pointer;
+}
+
+.no-suggestion {
+  padding: 6px 10px;
+}
+
+.suggestion.active {
+  background: #c7c7c7;
+}
+
+.suggestion:hover {
+  background: #f6f6f6;
+}

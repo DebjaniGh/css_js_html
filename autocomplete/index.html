@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script type="module" src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <input
+        class="search-input"
+        placeholder="Search users..."
+        role="combobox"
+        aria-autocomplete="list"
+        aria-controls="user-suggestions"
+        aria-expanded="false"
+      />
+      <ul class="suggestions" role="listbox" id="user-suggestions"></ul>
+    </div>
+  </body>
+</html>
