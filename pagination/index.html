@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>HTML + CSS</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- drodpwon to select items per page -->
+      <div class="page-size">
+        <label for="page-size">Select size</label>
+        <select id="page-size">
+          <option value="5">5</option>
+          <option value="10">10</option>
+          <option value="20">20</option>
+        </select>
+      </div>
+      <!-- User list -->
+      <ul class="user-list"></ul>
+
+      <!-- page buttons -->
+      <div class="pagination">
+        <button class="prev">Previous</button>
+        <div class="page-numbers"></div>
+        <button class="next">Next</button>
+      </div>
+    </div>
+  </body>
+</html>

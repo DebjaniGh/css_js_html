@@ -1,0 +1,57 @@
+.container {
+  max-width: 350px;
+  width: 90%;
+  margin: 20px;
+}
+
+.page-size {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.user-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: 100%;
+}
+
+.user {
+  padding: 8px 10px;
+  border: 0.5px solid #ccc;
+}
+
+.pagination {
+  display: flex;
+  gap: 6px;
+  justify-content: flex-end;
+  margin-top: 10px;
+}
+
+.page-numbers {
+  display: flex;
+  gap: 6px;
+}
+
+button {
+  padding: 6px 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  cursor: pointer;
+  background-color: #e5e2e2;
+}
+
+button:disabled {
+  cursor: not-allowed;
+  opacity: 0.5;
+  color: black;
+}
+
+button:focus-visible {
+  outline: 1.2px solid #6a6969;
+  outline-offset: 1.2px;
+}
+
+.page-btn.active {
+  background-color: rgb(74, 161, 237);
+}
