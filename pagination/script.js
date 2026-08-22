@@ -132,32 +132,38 @@ function renderPaginatedList() {
 // initial paint
 renderPaginatedList();
 
-// delegated click handling so buttons can be re-created freely
-pageNumbers.addEventListener("click", (event) => {
-  const pageBtnClicked = event.target.closest(".page-btn");
-  if (!pageBtnClicked) return;
-
-  const pageNumClicked = Number(pageBtnClicked.dataset.page);
-  currentPage = pageNumClicked;
-  renderCurrentPage();
-});
-
-nextBtn.addEventListener("click", () => {
+function goToNext() {
   // guard in case the button is clicked while already on the last page
   if (currentPage === getTotalPages()) {
     return;
   }
   currentPage++;
   renderCurrentPage();
-});
+}
 
-prevBtn.addEventListener("click", () => {
+function goToPrev() {
   if (currentPage === 1) {
     return;
   }
   currentPage--;
   renderCurrentPage();
-});
+}
+
+function onPageBtnClick() {
+  const pageBtnClicked = event.target.closest(".page-btn");
+  if (!pageBtnClicked) return;
+
+  const pageNumClicked = Number(pageBtnClicked.dataset.page);
+  currentPage = pageNumClicked;
+  renderCurrentPage();
+}
+
+// delegated click handling so buttons can be re-created freely
+pageNumbers.addEventListener("click", onPageBtnClick);
+
+nextBtn.addEventListener("click", goToNext);
+
+prevBtn.addEventListener("click", goToPrev);
 
 // disable prev/next at the boundaries (and next when there is no data)
 function updatePrevNextBtns() {
