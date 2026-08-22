@@ -55,3 +55,9 @@ button:focus-visible {
 .page-btn.active {
   background-color: rgb(74, 161, 237);
 }
+
+.ellipsis {
+  display: flex;
+  align-items: center;
+  padding: 0 2px;
+}

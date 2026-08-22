@@ -103,23 +103,32 @@ function renderCurrentPage() {
 function renderPageNumbers() {
   // Clear .page-numbers
   pageNumbers.replaceChildren();
-  const totalPages = getTotalPages();
+
+  const visiblePages = getVisiblePages();
 
   // create a btn for every page and append to .page-numbers
-  for (let page = 1; page <= totalPages; page++) {
-    const newPageBtn = document.createElement("button");
-    newPageBtn.textContent = page;
-    newPageBtn.dataset.page = page;
-    newPageBtn.classList.add("page-btn");
-    pageNumbers.append(newPageBtn);
-  }
+  visiblePages.forEach((page) => {
+    if (page === "...") {
+      const ellipsis = document.createElement("span");
+      ellipsis.textContent = "...";
+      ellipsis.classList.add("ellipsis");
+      pageNumbers.append(ellipsis);
+    } else {
+      const newPageBtn = document.createElement("button");
+      newPageBtn.textContent = page;
+      newPageBtn.dataset.page = page;
+      newPageBtn.classList.add("page-btn");
+      pageNumbers.append(newPageBtn);
+    }
+  });
 }
 
 // highlight the button matching currentPage, clear the rest
 function updateActivePageBtn() {
   const pageBtns = pageNumbers.querySelectorAll(".page-btn");
-  pageBtns.forEach((pageBtn, index) => {
-    pageBtn.classList.toggle("active", index === currentPage - 1);
+  pageBtns.forEach((pageBtn) => {
+    const page = Number(pageBtn.dataset.page);
+    pageBtn.classList.toggle("active", page === currentPage);
   });
 }
 
@@ -138,7 +147,7 @@ function goToNext() {
     return;
   }
   currentPage++;
-  renderCurrentPage();
+  renderPaginatedList();
 }
 
 function goToPrev() {
@@ -146,20 +155,20 @@ function goToPrev() {
     return;
   }
   currentPage--;
-  renderCurrentPage();
+  renderPaginatedList();
 }
 
-function onPageBtnClick() {
+function onPageBtnClick(event) {
   const pageBtnClicked = event.target.closest(".page-btn");
   if (!pageBtnClicked) return;
 
   const pageNumClicked = Number(pageBtnClicked.dataset.page);
   currentPage = pageNumClicked;
-  renderCurrentPage();
+  renderPaginatedList();
 }
 
 // delegated click handling so buttons can be re-created freely
-pageNumbers.addEventListener("click", onPageBtnClick);
+pageNumbers.addEventListener("click", (event) => onPageBtnClick(event));
 
 nextBtn.addEventListener("click", goToNext);
 
@@ -177,13 +186,41 @@ function normalizeCurrPage() {
   const totalPages = getTotalPages();
   if (totalPages === 0) {
     currentPage = 1;
+    return;
   }
   currentPage = Math.min(currentPage, totalPages);
 }
 
 // page size changed: recompute the page count and re-render everything
 pageSizeSelect.addEventListener("change", () => {
-  itemsPerPage = pageSizeSelect.value;
+  itemsPerPage = Number(pageSizeSelect.value);
   normalizeCurrPage();
   renderPaginatedList();
 });
+
+function getVisiblePages() {
+  const visiblePages = [];
+  const totalPages = getTotalPages();
+  const startPage = Math.max(1, currentPage - 2);
+  const lastPage = Math.min(currentPage + 2, totalPages);
+  if (totalPages === 0) return [];
+  visiblePages.push(1);
+
+  if (startPage > 2) {
+    visiblePages.push("...");
+  }
+
+  for (let i = startPage; i <= lastPage; i++) {
+    if (i === 1 || i === totalPages) continue;
+    visiblePages.push(i);
+  }
+
+  if (lastPage < totalPages - 1) {
+    visiblePages.push("...");
+  }
+
+  if (totalPages > 1) {
+    visiblePages.push(totalPages);
+  }
+  return visiblePages;
+}
