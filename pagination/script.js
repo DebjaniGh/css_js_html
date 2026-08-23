@@ -126,9 +126,17 @@ function renderPageNumbers() {
 // highlight the button matching currentPage, clear the rest
 function updateActivePageBtn() {
   const pageBtns = pageNumbers.querySelectorAll(".page-btn");
+
   pageBtns.forEach((pageBtn) => {
     const page = Number(pageBtn.dataset.page);
-    pageBtn.classList.toggle("active", page === currentPage);
+    const isCurrent = page === currentPage;
+    pageBtn.classList.toggle("active", isCurrent);
+    pageBtn.setAttribute("aria-label", `Go to page ${page}`);
+    if (isCurrent) {
+      pageBtn.setAttribute("aria-current", "page");
+    } else {
+      pageBtn.removeAttribute("aria-current");
+    }
   });
 }
 
