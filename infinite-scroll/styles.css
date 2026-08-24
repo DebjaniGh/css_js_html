@@ -1,0 +1,17 @@
+.container {
+  width: 500px;
+  margin: 0 auto;
+}
+
+.product-list {
+  list-style: none;
+}
+
+.product {
+  padding: 20px;
+  margin-bottom: 20px;
+}
+
+.sentinel {
+  height: 20px;
+}
