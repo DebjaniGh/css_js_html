@@ -45,15 +45,18 @@
   gap: 12px;
 }
 
-.login-btn {
-  background-color: rgb(133, 195, 249);
+button {
   color: black;
-  border: 0.2px solid rgb(116, 153, 186);
   border-radius: 4px;
   padding: 6px 12px;
   font-weight: 550;
   cursor: pointer;
   transition: background-color 0.3s ease;
+}
+
+.login-btn {
+  background-color: rgb(133, 195, 249);
+  border: 0.2px solid rgb(116, 153, 186);
 }
 
 .login-btn:hover {
@@ -62,13 +65,7 @@
 
 .signup-btn {
   background-color: rgb(154, 170, 185);
-  color: black;
   border: 0.2px solid rgb(113, 124, 134);
-  border-radius: 4px;
-  padding: 6px 12px;
-  font-weight: 550;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
 }
 
 .signup-btn:hover {
