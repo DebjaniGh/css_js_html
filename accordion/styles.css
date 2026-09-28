@@ -27,12 +27,12 @@
   outline-offset: 1.5px;
 }
 
-.accordion-header::after {
+.accordion-header::before {
   content: "▶";
   padding: 0px 26px;
 }
 
-.accordion-header.open::after {
+.accordion-header.open::before {
   content: "▼";
   padding: 0px 26px;
 }
